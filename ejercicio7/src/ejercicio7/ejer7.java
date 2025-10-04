@@ -94,7 +94,12 @@ public class ejer7 {
 				break;
 				
 			case 4: // Opción 4: Será necesario solicitar el nombre del ingrediente por pantalla al usuario y se visualizará el texto "SI, hay hamburguesas con dicho ingrediente y son las siguientes:" + el nombre de las hamburguesas que tengan dicho ingrediente entre sus ingredientes. Es necesario hacer uso de una variable BOOLEAN. En caso contrario se visualizará: "NO, no hay hamburguesas con dicho ingrediente".
-				System.out.println("4.BUSCAR INGREDIENTES");
+				// System.out.println("4.BUSCAR INGREDIENTES");
+				String nombreIngrediente = "";
+				System.out.println("Escribe un ingrediente para comprobar si alguna hamburguesa lo tiene: ");
+				nombreIngrediente = sc.nextLine();
+				if (nombreIngrediente.contains(ingredientes[i])){};
+
 				break;
 				
 			case 5: // Opción 5: Será necesario solicitar el nombre de la hamburguesa y las unidades a comer por pantalla al usuario y se disminuirá el stock de dicha hamburguesa. Será necesario visualizar un mensaje con el nuevo stock de la hamburguesa "El nuevo stock de la hamburguesa x es de y unidades."
