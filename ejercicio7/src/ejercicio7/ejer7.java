@@ -1,5 +1,6 @@
 package ejercicio7;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -33,6 +34,7 @@ public class ejer7 {
 			switch (opcion){
 			
 			case 1: // Será necesario solicitar el nombre de la hamburguesa y las unidades a comer por pantalla al usuario y se calculará y visualizará el importe del pedido.
+				System.out.println("Hamburguesas: "+ Arrays.toString(nombre));
 				
 				System.out.println("Introduce el nombre de la hamburguesa: ");
 				sc.nextLine(); // Limpiar el buffer después de nextInt()
@@ -93,25 +95,87 @@ public class ejer7 {
 				
 				break;
 				
-			case 4: // Opción 4: Será necesario solicitar el nombre del ingrediente por pantalla al usuario y se visualizará el texto "SI, hay hamburguesas con dicho ingrediente y son las siguientes:" + el nombre de las hamburguesas que tengan dicho ingrediente entre sus ingredientes. Es necesario hacer uso de una variable BOOLEAN. En caso contrario se visualizará: "NO, no hay hamburguesas con dicho ingrediente".
-				// System.out.println("4.BUSCAR INGREDIENTES");
+			case 4: /*Opción 4: Será necesario solicitar el nombre del ingrediente por pantalla al usuario
+			 y se visualizará el texto "SI, hay hamburguesas con dicho ingrediente y 
+			 son las siguientes:" + el nombre de las hamburguesas que tengan dicho ingrediente entre sus ingredientes.
+			 Es necesario hacer uso de una variable BOOLEAN. En caso contrario se visualizará: "NO, no hay hamburguesas con dicho ingrediente".*/ 
+				
 				String nombreIngrediente = "";
+				nombreIngrediente = sc.nextLine(); // Para limpiar el buffer del scanner
 				System.out.println("Escribe un ingrediente para comprobar si alguna hamburguesa lo tiene: ");
 				nombreIngrediente = sc.nextLine();
-				if (nombreIngrediente.contains(ingredientes[i])){};
-
+				encontrada = false;
+				
+				// Se hace un bucle que comprueba si el array contiene el valor de la variable nombreIngrediente
+				for (int i = 0; i < ingredientes.length; i++) {
+					if (ingredientes[i].contains(nombreIngrediente)) {
+						encontrada = true;
+						System.out.println("\nLa hamburguesa " + nombre[i] + " tiene " + nombreIngrediente);
+					}
+				}
+				
+				if(!encontrada) {
+					System.out.println("Ese ingrediente no se encuentra en ninguna hamburguesa.");
+				};
+				
 				break;
 				
-			case 5: // Opción 5: Será necesario solicitar el nombre de la hamburguesa y las unidades a comer por pantalla al usuario y se disminuirá el stock de dicha hamburguesa. Será necesario visualizar un mensaje con el nuevo stock de la hamburguesa "El nuevo stock de la hamburguesa x es de y unidades."
-				System.out.println("5.DISMINUIR STOCK");
+			case 5: /*Opción 5: Será necesario solicitar el nombre de la hamburguesa y las unidades a comer por pantalla al usuario
+			 y se disminuirá el stock de dicha hamburguesa. Será necesario visualizar un mensaje con el nuevo stock de la hamburguesa
+			 "El nuevo stock de la hamburguesa x es de y unidades."*/ 
+				
+				// Asignación de variables
+				System.out.println("Introduce el nombre de la hamburguesa: ");
+				sc.nextLine(); // Limpiar el buffer después de nextInt()
+				nombrePedido = sc.nextLine();
+				System.out.println("Introduce la cantidad de unidades que deseas: ");
+				numeroPedido = sc.nextInt();
+				encontrada = false;
+				
+				//
+				for (int i = 0; i < nombre.length; i++) {
+					if (nombrePedido.equalsIgnoreCase(nombre[i])) {
+						encontrada = true;
+						if (numeroPedido > stock[i]) {
+							System.out.println("\n¡No hay suficiente stock! Solo quedan " + stock[i] + " unidades.");
+						} else {
+							System.out.println(numeroPedido);
+							System.out.println("\nEl nuevo stock de la hamburguesa "+ nombre[i] +" es de "+ (stock[i] - numeroPedido)+ " unidades");
+						}
+						break;
+					}
+				}
+				
+				if (!encontrada) {
+					System.out.println("\nNo se encuentra esa hamburguesa en el menú.");
+				}
+				
 				break;
 				
-			case 6: // Opción 6: Será necesario solicitar el número de comensales y se calculará la media de hamburguesas que puede comer cada comensal teniendo en cuenta el stock existente.*/
-				System.out.println("6.HAMBURGUESAS POR PERSONA");
+			case 6: /*Opción 6: Será necesario solicitar el número de comensales y se calculará la media de hamburguesas
+			 que puede comer cada comensal teniendo en cuenta el stock existente.*/ 
+				
+				// Asignación de variables
+				int comensales = 0;
+				double media = 0;
+				double suma = 0;
+				System.out.println("Introduce la cantidad de comensales: ");
+				comensales = sc.nextInt();
+				
+				// Se hace un for para conseguir la suma total de las hamburguesas
+		        for (int numero : stock) {
+		            suma += numero;
+		        }
+		        
+				for (int i = 0; i < nombre.length; i++) {
+					media = suma / comensales;
+				}
+				
+				System.out.println("Teniendo en cuenta que el stock de todas las hamburguesas es: "+ suma +" y son "+ comensales +" comensales, pueden comerse "+ media +" hamburguesas cada uno.");
 				break;
 				
 			case 7: 
-				System.out.println("7.SALIR");
+				System.out.println("ADIÓS");
 				break;
 				
 			}
