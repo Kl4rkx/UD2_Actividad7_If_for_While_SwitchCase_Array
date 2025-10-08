@@ -57,10 +57,6 @@ Para consultar las hamburguesas con "bacon", elige la opción 4 y escribe "bacon
 - El menú se repite hasta que el usuario seleccione la opción "SALIR".
 - Proyecto pensado para aprendizaje. Puedes modificarlo y mejorarlo.
 
-## Autor
-
-Este proyecto ha sido creado por [Tu Nombre o Usuario].
 
 ---
 
-¡Siéntete libre de modificarlo, probarlo o aportar tus propias mejoras!
