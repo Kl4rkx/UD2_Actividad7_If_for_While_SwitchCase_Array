@@ -18,13 +18,13 @@ Este proyecto es una aplicación de consola escrita en Java que simula la gesti�
 2. Compila el archivo:
 
     ```sh
-    javac ejer7.java
+    javac ejercicio7/src/ejercicio7/ejer7.java
     ```
 
 3. Ejecuta el programa:
 
     ```sh
-    java ejercicio7.ejer7
+    java ejercicio7/src/ejercicio7/ejer7.java
     ```
 
 ## Menú de opciones
