@@ -2,6 +2,10 @@
 
 Este proyecto es una aplicación de consola escrita en Java que simula la gestión de un menú de hamburguesas. Permite realizar pedidos, consultar información, buscar hamburguesas por ingredientes, reducir el stock y calcular el promedio de hamburguesas por comensal. Está pensado como ejercicio académico para practicar arrays, condicionales y estructuras de control.
 
+## Codigo fuente
+
+https://github.com/Kl4rkx/MenuDeHamburguesas_Java/blob/main/ejercicio7/src/ejercicio7/ejer7.java
+
 ## Características
 
 - **Pedido de hamburguesas:** El usuario puede seleccionar el tipo de hamburguesa y las unidades que desea pedir.
