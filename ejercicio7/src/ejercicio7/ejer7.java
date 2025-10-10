@@ -23,13 +23,13 @@ public class ejer7 {
 			// Se pide y recoge el valor de opcion
 			System.out.println("\n---------------------------------------");
 			System.out.println("Selecciona una opción: (Ej: 1)");
-			System.out.println("1.PEDIDO");
-			System.out.println("2.LA HAMBURGUESA MAS BARATA");
-			System.out.println("3.INFORMACION HAMBURGUESA");
-			System.out.println("4.BUSCAR INGREDIENTES");
-			System.out.println("5.DISMINUIR STOCK");
-			System.out.println("6.HAMBURGUESAS POR PERSONA");
-			System.out.println("7.SALIR");
+			System.out.println("1. PEDIDO");
+			System.out.println("2. LA HAMBURGUESA MAS BARATA");
+			System.out.println("3. INFORMACION HAMBURGUESA");
+			System.out.println("4. BUSCAR INGREDIENTES");
+			System.out.println("5. DISMINUIR STOCK");
+			System.out.println("6. HAMBURGUESAS POR PERSONA");
+			System.out.println("7. SALIR");
 			System.out.println("---------------------------------------");
 			opcion = sc.nextInt();
 			switch (opcion) {
@@ -222,14 +222,12 @@ public class ejer7 {
 				System.out.println("Introduce la cantidad de comensales: ");
 				comensales = sc.nextInt();
 
-				// Se hace un for para conseguir la suma total de las hamburguesas
+				// Se hace un for para conseguir la suma total de las hamburguesas concatenando y sumando su valor
 				for (int numero : stock) {
 					suma += numero;
 				}
 
-				for (int i = 0; i < nombre.length; i++) {
-					media = suma / comensales;
-				}
+				media = suma / comensales;
 
 				System.out.println("Teniendo en cuenta que el stock de todas las hamburguesas es: " + suma + " y son "
 						+ comensales + " comensales, pueden comerse " + media + " hamburguesas cada uno.");
